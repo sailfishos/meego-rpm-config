@@ -1,0 +1,9 @@
+<package project="Mer:Trunk:Base" name="meego-rpm-config">
+  <title>MeeGo specific rpm configuration files</title>
+  <description>MeeGo specific rpm configuration files.
+
+
+
+</description>
+  <url>http://meego.com</url>
+</package>

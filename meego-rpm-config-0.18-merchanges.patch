@@ -1,0 +1,13 @@
+diff -ru meego-rpm-config-0.18/rpmrc meego-rpm-config-0.18-merchanges/rpmrc
+--- meego-rpm-config-0.18/rpmrc	2011-05-28 07:32:21.000000000 +0200
++++ meego-rpm-config-0.18-merchanges/rpmrc	2011-08-30 06:51:51.512305528 +0200
+@@ -47,7 +47,7 @@
+ optflags: armv5tejl %{__global_cflags} -march=armv5te
+ Optflags: armv5tel %{__global_cflags}   -fmessage-length=0 -march=armv5te -mlittle-endian
+ Optflags: armv6l %{__global_cflags}  -fmessage-length=0 -march=armv6 -mlittle-endian  -mfpu=vfp -mfloat-abi=softfp -D__SOFTFP__
+-Optflags: armv7l %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mtune=cortex-a8 -mlittle-endian  -mfpu=vfpv3 -mfloat-abi=softfp -D__SOFTFP__
++Optflags: armv7l %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mlittle-endian -mfpu=vfpv3-d16 -mfloat-abi=softfp -D__SOFTFP__
+ optflags: armv7hl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mno-thumb
+ optflags: armv7nhl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mno-thumb  
+ optflags: armv7thl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mthumb
+Only in meego-rpm-config-0.18-merchanges: rpmrc~

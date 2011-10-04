@@ -1,0 +1,19 @@
+Name: meego-rpm-config
+Summary: MeeGo specific rpm configuration files
+Version: 0.18
+Release: 1
+Group: Development/System
+License: GPL+
+URL: http://meego.com
+Sources:
+    - meego-rpm-config-%{version}.tar.bz2
+Patches:
+    - meego-rpm-config-0.18-merchanges.patch
+Description: MeeGo specific rpm configuration files.
+Provides:
+    - moblin-rpm-config
+Obsoletes:
+    - moblin-rpm-config =< 2.1.92-3.8
+BuildArch: noarch
+Builder: none
+Configure: none
