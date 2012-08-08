@@ -1,3 +1,6 @@
+* Wed Aug 08 2012 Tuukka Tolvanen <tuukka.tolvanen@gmail.com> - 0.18
+- Patch against bashisms in install_info*, fix for MER#42 et al.
+
 * Fri May 27 2011 Anas Nashif <anas.nashif@intel.com> - 0.17
 - Refined doc/locale macros
 

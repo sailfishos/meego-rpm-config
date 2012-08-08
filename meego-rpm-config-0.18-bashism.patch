@@ -1,0 +1,30 @@
+diff -urpwNd meego-rpm-config-0.18.orig/macros meego-rpm-config-0.18/macros
+--- meego-rpm-config-0.18.orig/macros	2011-05-28 08:32:21.000000000 +0300
++++ meego-rpm-config-0.18/macros	2012-08-08 04:04:55.000000000 +0300
+@@ -124,20 +124,18 @@
+ 
+ 
+ %install_info(:-:) \
+-        ALL_ARGS=(%{**}) \
+-        NUM_ARGS=${#ALL_ARGS[@]} \
++        lastarg() { shift $(($# - 1)) ; echo "$1" ; } \
+         if test -x sbin/install-info ; then \
+-            if test -e "${ALL_ARGS[$((NUM_ARGS-1))]}" ; then \
+-                sbin/install-info "${ALL_ARGS[@]}" \
++            if test -e "$(lastarg %{**})" ; then \
++                sbin/install-info %{**} \
+             fi \
+         fi ;
+ 
+ %install_info_delete(:-:) \
+-        ALL_ARGS=(%{**}) \
+-        NUM_ARGS=${#ALL_ARGS[@]} \
++        lastarg() { shift $(($# - 1)) ; echo "$1" ; } \
+         if test -x sbin/install-info ; then \
+-           if ! test -e "${ALL_ARGS[$((NUM_ARGS-1))]}" ; then \
+-                sbin/install-info --quiet --delete "${ALL_ARGS[@]}" \
++           if ! test -e "$(lastarg %{**})" ; then \
++                sbin/install-info --quiet --delete %{**} \
+            fi ; \
+         fi ;
+ 

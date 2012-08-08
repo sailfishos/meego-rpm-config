@@ -17,6 +17,7 @@ URL:        http://meego.com
 Source0:    meego-rpm-config-%{version}.tar.bz2
 Source100:  meego-rpm-config.yaml
 Patch0:	    meego-rpm-config-0.18-merchanges.patch
+Patch1:	    meego-rpm-config-0.18-bashism.patch
 Provides:   moblin-rpm-config
 Obsoletes:   moblin-rpm-config =< 2.1.92-3.8
 
@@ -29,6 +30,7 @@ MeeGo specific rpm configuration files.
 %prep
 %setup -q -n %{name}-%{version}
 %patch0 -p1
+%patch1 -p1
 
 # >> setup
 # << setup
