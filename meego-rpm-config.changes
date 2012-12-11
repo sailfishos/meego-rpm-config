@@ -1,3 +1,7 @@
+* Tue Dec 11 2012 Marko Saukko <marko.saukko@jollamobie.com> - 0.18
+- Drop the moblin-rpm-configs obsolete/provides
+- Clean packaging a bit.
+
 * Wed Aug 08 2012 Tuukka Tolvanen <tuukka.tolvanen@gmail.com> - 0.18
 - Patch against bashisms in install_info*, fix for MER#42 et al.
 

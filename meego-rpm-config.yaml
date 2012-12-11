@@ -9,11 +9,10 @@ Sources:
     - meego-rpm-config-%{version}.tar.bz2
 Patches:
     - meego-rpm-config-0.18-merchanges.patch
+    - meego-rpm-config-0.18-bashism.patch
+Macros:
+    - disable_docs_package;1
 Description: MeeGo specific rpm configuration files.
-Provides:
-    - moblin-rpm-config
-Obsoletes:
-    - moblin-rpm-config =< 2.1.92-3.8
 BuildArch: noarch
 Builder: none
 Configure: none
