@@ -20,6 +20,7 @@ Source0:    meego-rpm-config-%{version}.tar.bz2
 Source100:  meego-rpm-config.yaml
 Patch0:     meego-rpm-config-0.18-merchanges.patch
 Patch1:     meego-rpm-config-0.18-bashism.patch
+Patch2:     meego-rpm-config-0.18-flexible-install.patch
 
 %description
 MeeGo specific rpm configuration files.
@@ -32,6 +33,9 @@ MeeGo specific rpm configuration files.
 %patch0 -p1
 # meego-rpm-config-0.18-bashism.patch
 %patch1 -p1
+# meego-rpm-config-0.18-flexible-install.spec
+%patch2 -p1
+
 # >> setup
 # << setup
 

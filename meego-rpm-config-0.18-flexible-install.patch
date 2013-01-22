@@ -1,0 +1,25 @@
+--- meego-rpm-config-0.18/macros.orig	2012-12-20 23:24:03.540819774 +0000
++++ meego-rpm-config-0.18/macros	2012-12-20 23:28:24.823337562 +0000
+@@ -142,6 +142,13 @@
+ #==============================================================================
+ # ---- Build policy macros.
+ #
++
++%__spec_install_pre %{___build_pre}\
++    [ "$RPM_BUILD_ROOT" != "/" ] && rm -rf "${RPM_BUILD_ROOT}"\
++    mkdir -p `dirname "$RPM_BUILD_ROOT"`\
++    mkdir "$RPM_BUILD_ROOT"\
++%{nil}
++
+ #---------------------------------------------------------------------
+ #	Expanded at end of %install scriptlet.
+ #
+@@ -247,8 +254,6 @@
+ LANG=C\
+ export LANG\
+ unset DISPLAY\
+-rm -rf %{?buildroot:%{buildroot}} \
+-mkdir -p %{?buildroot:%{buildroot}} \
+ %{nil}
+ 
+ %check %%check\
