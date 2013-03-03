@@ -1,3 +1,6 @@
+* Sun Mar 03 2013 Carsten Munk <carsten.munk@jollamobile.com> - 0.18
+- Switch to SHA256 digests and XZ-6 compression, drop debug info package, it's in rpm just fine
+
 * Tue Jan 22 2013 Oleg Girko <ol+mer@infoserver.ru> - 0.18
 - Cleaning buildroot more correctly, in %__spec_install_pre, not %build.
 

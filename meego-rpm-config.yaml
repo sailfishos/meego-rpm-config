@@ -10,6 +10,8 @@ Sources:
 Patches:
     - meego-rpm-config-0.18-merchanges.patch
     - meego-rpm-config-0.18-bashism.patch
+    - meego-rpm-config-0.18-flexible-install.patch
+    - meego-rpm-config-xzdebuginfo.patch
 Macros:
     - disable_docs_package;1
 Description: MeeGo specific rpm configuration files.
