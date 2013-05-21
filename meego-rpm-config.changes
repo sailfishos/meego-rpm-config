@@ -1,3 +1,7 @@
+* Tue May 21 2013 Juha Kallioinen <juha.kallioinen@jollamobile.com> - 0.18
+- Fixes MER#641: Add -Wno-psabi to ARM default optflags
+  This suppresses a spammy warning about changed va_list mangling in gcc 4.4
+
 * Sun Mar 03 2013 Carsten Munk <carsten.munk@jollamobile.com> - 0.18
 - Switch to SHA256 digests and XZ-6 compression, drop debug info package, it's in rpm just fine
 
