@@ -40,6 +40,8 @@ MeeGo specific rpm configuration files.
 %patch3 -p1
 # meego-rpm-config-0.18-wnopsabi.patch
 %patch4 -p1
+# meego-rpm-config-0.18-replace-mno-thumb-with-marm.patch
+%patch5 -p1
 # >> setup
 # << setup
 

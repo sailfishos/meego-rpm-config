@@ -1,3 +1,6 @@
+* Thu Nov 14 2013 Davide Bettio <davide.bettio@ispirata.com> - 0.18
+- Replace -mno-thumb with -marm to fix build on newer gcc versions
+
 * Tue May 21 2013 Juha Kallioinen <juha.kallioinen@jollamobile.com> - 0.18
 - Fixes MER#641: Add -Wno-psabi to ARM default optflags
   This suppresses a spammy warning about changed va_list mangling in gcc 4.4
