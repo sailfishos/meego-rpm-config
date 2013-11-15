@@ -23,6 +23,7 @@ Patch1:     meego-rpm-config-0.18-bashism.patch
 Patch2:     meego-rpm-config-0.18-flexible-install.patch
 Patch3:     meego-rpm-config-xzdebuginfo.patch
 Patch4:     meego-rpm-config-0.18-wnopsabi.patch
+Patch5:     meego-rpm-config-0.18-replace-mno-thumb-with-marm.patch
 
 %description
 MeeGo specific rpm configuration files.
