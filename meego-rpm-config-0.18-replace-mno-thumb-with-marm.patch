@@ -1,0 +1,13 @@
+--- meego-rpm-config-0.18.orig/rpmrc	2013-11-15 12:35:58.822848526 +0100
++++ meego-rpm-config-0.18/rpmrc	2013-11-15 12:34:18.210349624 +0100
+@@ -48,8 +48,8 @@
+ Optflags: armv5tel %{__global_cflags}   -fmessage-length=0 -march=armv5te -mlittle-endian
+ Optflags: armv6l %{__global_cflags}  -fmessage-length=0 -march=armv6 -mlittle-endian  -mfpu=vfp -mfloat-abi=softfp -D__SOFTFP__ -Wno-psabi
+ Optflags: armv7l %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mlittle-endian -mfpu=vfpv3-d16 -mfloat-abi=softfp -D__SOFTFP__ -Wno-psabi
+-optflags: armv7hl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mno-thumb -Wno-psabi
+-optflags: armv7nhl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mno-thumb -Wno-psabi
++optflags: armv7hl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -marm -Wno-psabi
++optflags: armv7nhl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -marm -Wno-psabi
+ optflags: armv7thl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mthumb -Wno-psabi
+ optflags: armv7tnhl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mthumb -Wno-psabi
+ 
