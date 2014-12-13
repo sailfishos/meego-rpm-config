@@ -1,3 +1,6 @@
+* Sat Dec 13 2014 Carsten Munk <carsten.munk@jolla.com> - 0.18
+- Make i486 == i686, armv7hl == armv7tnhl
+
 * Thu Nov 14 2013 Davide Bettio <davide.bettio@ispirata.com> - 0.18
 - Replace -mno-thumb with -marm to fix build on newer gcc versions
 

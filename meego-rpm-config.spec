@@ -17,13 +17,7 @@ License:    GPL+
 BuildArch:  noarch
 URL:        http://meego.com
 Source0:    meego-rpm-config-%{version}.tar.bz2
-Source100:  meego-rpm-config.yaml
 Patch0:     meego-rpm-config-0.18-merchanges.patch
-Patch1:     meego-rpm-config-0.18-bashism.patch
-Patch2:     meego-rpm-config-0.18-flexible-install.patch
-Patch3:     meego-rpm-config-xzdebuginfo.patch
-Patch4:     meego-rpm-config-0.18-wnopsabi.patch
-Patch5:     meego-rpm-config-0.18-replace-mno-thumb-with-marm.patch
 
 %description
 MeeGo specific rpm configuration files.
@@ -33,16 +27,6 @@ MeeGo specific rpm configuration files.
 
 # meego-rpm-config-0.18-merchanges.patch
 %patch0 -p1
-# meego-rpm-config-0.18-bashism.patch
-%patch1 -p1
-# meego-rpm-config-0.18-flexible-install.patch
-%patch2 -p1
-# meego-rpm-config-xzdebuginfo.patch
-%patch3 -p1
-# meego-rpm-config-0.18-wnopsabi.patch
-%patch4 -p1
-# meego-rpm-config-0.18-replace-mno-thumb-with-marm.patch
-%patch5 -p1
 # >> setup
 # << setup
 
