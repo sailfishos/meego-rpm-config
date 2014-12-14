@@ -110,7 +110,7 @@ diff -ruN meego-rpm-config-0.18/rpmrc meego-rpm-config-0.18-merchanges/rpmrc
  
  Optflags: i386 %{__global_cflags} -m32 -march=i386 -mtune=generic -fasynchronous-unwind-tables
 -Optflags: i486 %{__global_cflags} -m32 -march=i486 -fasynchronous-unwind-tables
-+Optflags: i486 %{__global_cflags} -m32 -march=i686 -mfpmath=sse -mtune=generic -fno-omit-frame-pointer -fasynchronous-unwind-tables
++Optflags: i486 %{__global_cflags} -m32 -msse -msse2 -march=i686 -mfpmath=sse -mtune=generic -fno-omit-frame-pointer -fasynchronous-unwind-tables
  Optflags: i586 %{__global_cflags} -m32 -march=core2 -mssse3  -mtune=atom -mfpmath=sse -fasynchronous-unwind-tables -fno-omit-frame-pointer
  Optflags: i686 %{__global_cflags} -m32 -march=core2 -mssse3  -mtune=atom  -mfpmath=sse -fasynchronous-unwind-tables -fno-omit-frame-pointer
  optflags: athlon %{__global_cflags} -m32 -march=athlon -fasynchronous-unwind-tables
