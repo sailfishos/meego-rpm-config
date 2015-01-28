@@ -1,6 +1,6 @@
-diff -ruN meego-rpm-config-0.18/macros meego-rpm-config-0.18-merchanges/macros
---- meego-rpm-config-0.18/macros	2011-05-28 01:32:21.000000000 -0400
-+++ meego-rpm-config-0.18-merchanges/macros	2014-12-13 15:53:24.655473000 -0500
+diff -ru meego-rpm-config-0.18/macros meego-rpm-config-0.18-merchanges/macros
+--- meego-rpm-config-0.18/macros	2011-05-28 07:32:21.000000000 +0200
++++ meego-rpm-config-0.18-merchanges/macros	2015-01-28 10:14:48.491260348 +0100
 @@ -23,6 +23,13 @@
  #       Default fuzz level for %patch in spec file.
  %_default_patch_fuzz    2
@@ -102,9 +102,19 @@ diff -ruN meego-rpm-config-0.18/macros meego-rpm-config-0.18-merchanges/macros
  %{nil}
  
  %check %%check\
-diff -ruN meego-rpm-config-0.18/rpmrc meego-rpm-config-0.18-merchanges/rpmrc
---- meego-rpm-config-0.18/rpmrc	2011-05-28 01:32:21.000000000 -0400
-+++ meego-rpm-config-0.18-merchanges/rpmrc	2014-12-13 15:59:11.063473000 -0500
+@@ -295,7 +274,7 @@
+ %__find_provides        /usr/lib/rpm/meego/find-provides
+ %__find_requires        /usr/lib/rpm/meego/find-requires
+ 
+-%__global_cflags	-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security
++%__global_cflags	-Os -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security
+ 
+ # Disable lookups
+ %_hkp_keyserver  %{nil}
+Only in meego-rpm-config-0.18-merchanges: macros~
+diff -ru meego-rpm-config-0.18/rpmrc meego-rpm-config-0.18-merchanges/rpmrc
+--- meego-rpm-config-0.18/rpmrc	2011-05-28 07:32:21.000000000 +0200
++++ meego-rpm-config-0.18-merchanges/rpmrc	2015-01-28 10:14:21.455093603 +0100
 @@ -1,7 +1,7 @@
  include: /usr/lib/rpm/rpmrc
  
