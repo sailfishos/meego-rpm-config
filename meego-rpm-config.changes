@@ -1,3 +1,12 @@
+* Sat Jan 23 2016 Andrea Bernabei <and.bernabei@gmail.com> - 0.18
+- Fixes MER#1469: Revert "Switch back to vfpv3-d16 for armv7hl"
+
+* Mon Dec 15 2014 Carsten Munk <carsten.munk@jolla.com> - 0.18
+- Switch back to vfpv3-d16 for armv7hl
+
+* Sun Dec 14 2014 Carsten Munk <carsten.munk@jolla.com> - 0.18
+- Fix so fpmath=sse actually works
+
 * Sat Dec 13 2014 Carsten Munk <carsten.munk@jolla.com> - 0.18
 - Make i486 == i686, armv7hl == armv7tnhl
 
