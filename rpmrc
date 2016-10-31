@@ -1,7 +1,7 @@
 include: /usr/lib/rpm/rpmrc
 
 Optflags: i386 %{__global_cflags} -m32 -march=i386 -mtune=generic -fasynchronous-unwind-tables
-Optflags: i486 %{__global_cflags} -m32 -march=i486 -fasynchronous-unwind-tables
+Optflags: i486 %{__global_cflags} -m32 -msse -msse2 -march=i686 -mfpmath=sse -mtune=generic -fno-omit-frame-pointer -fasynchronous-unwind-tables
 Optflags: i586 %{__global_cflags} -m32 -march=core2 -mssse3  -mtune=atom -mfpmath=sse -fasynchronous-unwind-tables -fno-omit-frame-pointer
 Optflags: i686 %{__global_cflags} -m32 -march=core2 -mssse3  -mtune=atom  -mfpmath=sse -fasynchronous-unwind-tables -fno-omit-frame-pointer
 optflags: athlon %{__global_cflags} -m32 -march=athlon -fasynchronous-unwind-tables
@@ -46,12 +46,12 @@ optflags: armv4l %{__global_cflags} -fsigned-char -march=armv4
 optflags: armv4tl %{__global_cflags} -march=armv4t
 optflags: armv5tejl %{__global_cflags} -march=armv5te
 Optflags: armv5tel %{__global_cflags}   -fmessage-length=0 -march=armv5te -mlittle-endian
-Optflags: armv6l %{__global_cflags}  -fmessage-length=0 -march=armv6 -mlittle-endian  -mfpu=vfp -mfloat-abi=softfp -D__SOFTFP__
-Optflags: armv7l %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mtune=cortex-a8 -mlittle-endian  -mfpu=vfpv3 -mfloat-abi=softfp -D__SOFTFP__
-optflags: armv7hl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mno-thumb
-optflags: armv7nhl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mno-thumb  
-optflags: armv7thl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mthumb
-optflags: armv7tnhl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mthumb  
+Optflags: armv6l %{__global_cflags}  -fmessage-length=0 -march=armv6 -mlittle-endian  -mfpu=vfp -mfloat-abi=softfp -D__SOFTFP__ -Wno-psabi
+Optflags: armv7l %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mlittle-endian -mfpu=vfpv3-d16 -mfloat-abi=softfp -D__SOFTFP__ -Wno-psabi
+optflags: armv7hl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mthumb -Wno-psabi
+optflags: armv7nhl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -marm -Wno-psabi
+optflags: armv7thl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mthumb -Wno-psabi
+optflags: armv7tnhl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mthumb -Wno-psabi
 
 
 optflags: atarist %{__global_cflags}
