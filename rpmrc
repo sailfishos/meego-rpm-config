@@ -53,6 +53,7 @@ optflags: armv7nhl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-
 optflags: armv7thl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mthumb -Wno-psabi
 optflags: armv7tnhl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mthumb -Wno-psabi
 
+optflags: aarch64 %{__global_cflags}
 
 optflags: atarist %{__global_cflags}
 optflags: atariste %{__global_cflags}
@@ -78,5 +79,6 @@ buildarchtranslate: i586: i586
 buildarchtranslate: armv5tejl: armv5tel
 buildarchtranslate: armv6l: armv5tel
 
+buildarchtranslate: aarch64: aarch64
 
 macrofiles:     /usr/lib/rpm/macros:/usr/lib/rpm/%{_target}/macros:/usr/lib/rpm/meego/macros:/etc/rpm/macros.*:/etc/rpm/macros:/etc/rpm/%{_target}/macros:~/.rpmmacros
