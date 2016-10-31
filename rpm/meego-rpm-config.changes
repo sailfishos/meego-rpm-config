@@ -1,3 +1,7 @@
+* Mon Oct 31 2016 David Greaves <david.greaves@jolla.com> - 0.18
+- Move to tar_git from dumb packaging
+- Add aarch64 to rpmrc
+
 * Sat Jan 23 2016 Andrea Bernabei <and.bernabei@gmail.com> - 0.18
 - Fixes MER#1469: Revert "Switch back to vfpv3-d16 for armv7hl"
 
