@@ -1,4 +1,4 @@
-* Mon Oct 31 2016 David Greaves <david.greaves@jolla.com> - 0.18
+* Mon Oct 31 2016 David Greaves <david.greaves@jolla.com> - 0.18-2
 - Move to tar_git from dumb packaging
 - Add aarch64 to rpmrc
 
