@@ -167,7 +167,7 @@
     %{!?__debug_package:/usr/lib/rpm/meego/brp-strip %{__strip}} \
     /usr/lib/rpm/meego/brp-strip-static-archive %{__strip} \
     /usr/lib/rpm/meego/brp-strip-comment-note %{__strip} %{__objdump} \
-    /usr/lib/rpm/brp-python-bytecompile \
+    /usr/lib/rpm/brp-python-bytecompile %{__python} \
     /usr/lib/rpm/meego/brp-python-hardlink \
     %{!?disable_docs_package:/usr/lib/rpm/meego/find-docs.sh %{buildroot}} \
     %{!?__jar_repack:/usr/lib/rpm/meego/brp-java-repack-jars} \
