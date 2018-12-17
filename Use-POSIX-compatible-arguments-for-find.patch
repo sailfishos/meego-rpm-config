@@ -1,0 +1,37 @@
+Arguments -or and -not are GNU extensions.
+
+--- meego-rpm-config-0.18/brp-strip-comment-note.orig	2018-12-17 15:09:02.793783425 +0200
++++ meego-rpm-config-0.18/brp-strip-comment-note	2018-12-17 15:10:17.632191187 +0200
+@@ -11,7 +11,7 @@ fi
+ 
+ # Strip .comment and .note sections (the latter only if it is not allocated)
+ # for already stripped elf files in the build root
+-for f in `find $RPM_BUILD_ROOT -type f \( -perm -0100 -or -perm -0010 -or -perm -0001 \) -exec file {} \; | \
++for f in `find $RPM_BUILD_ROOT -type f \( -perm -0100 -o -perm -0010 -o -perm -0001 \) -exec file {} \; | \
+         grep -v "^${RPM_BUILD_ROOT}/\?usr/lib/debug"  | \
+ 	sed -n -e 's/^\(.*\):[ 	]*ELF.*, stripped/\1/p'`; do
+ 	note="-R .note"
+--- meego-rpm-config-0.18/brp-strip.orig	2018-12-17 15:08:50.546716236 +0200
++++ meego-rpm-config-0.18/brp-strip	2018-12-17 15:10:09.045144438 +0200
+@@ -6,7 +6,7 @@ fi
+ [ -z "$STRIP" -a -n "$1" ] && STRIP="$1"
+ [ -z "$STRIP" ] && STRIP=strip
+ # Strip ELF binaries
+-for f in `find $RPM_BUILD_ROOT -type f \( -perm -0100 -or -perm -0010 -or -perm -0001 \) -exec file {} \; | \
++for f in `find $RPM_BUILD_ROOT -type f \( -perm -0100 -o -perm -0010 -o -perm -0001 \) -exec file {} \; | \
+         grep -v "^${RPM_BUILD_ROOT}/\?usr/lib/debug"  | \
+ 	grep -v ' shared object,' | \
+ 	sed -n -e 's/^\(.*\):[ 	]*ELF.*, not stripped/\1/p'`; do
+--- meego-rpm-config-0.18/brp-java-repack-jars.orig	2018-12-17 15:23:44.383423057 +0200
++++ meego-rpm-config-0.18/brp-java-repack-jars	2018-12-17 15:24:01.628509248 +0200
+@@ -76,8 +76,8 @@ if [ ! -z "$JARS" ]; then
+ 		# make the jar
+ 		pushd $JARDIR > /dev/null
+ 
+-		if [ -n "`find -not -name '.'`" ]; then
+-			find * -not -name '.' | LC_ALL=C sort | /usr/bin/zip -q -X -9 $j -@
++		if [ -n "`find '!' -name '.'`" ]; then
++			find * '!' -name '.' | LC_ALL=C sort | /usr/bin/zip -q -X -9 $j -@
+ 		else
+ 			# Put the empty jar back
+ 			touch $j
