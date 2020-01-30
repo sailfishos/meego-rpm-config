@@ -2,11 +2,11 @@ include: /usr/lib/rpm/rpmrc
 
 Optflags: i386 %{__global_cflags} -m32 -march=i386 -mtune=generic -fasynchronous-unwind-tables
 Optflags: i486 %{__global_cflags} -m32 -msse -msse2 -march=i686 -mfpmath=sse -mtune=generic -fno-omit-frame-pointer -fasynchronous-unwind-tables
-Optflags: i586 %{__global_cflags} -m32 -march=core2 -mssse3  -mtune=atom -mfpmath=sse -fasynchronous-unwind-tables -fno-omit-frame-pointer
-Optflags: i686 %{__global_cflags} -m32 -march=core2 -mssse3  -mtune=atom  -mfpmath=sse -fasynchronous-unwind-tables -fno-omit-frame-pointer
+Optflags: i586 %{__global_cflags} -m32 -march=core2 -mssse3  -mtune=atom -mfpmath=sse -fasynchronous-unwind-tables -fno-omit-frame-pointer -fstack-clash-protection
+Optflags: i686 %{__global_cflags} -m32 -march=core2 -mssse3  -mtune=atom  -mfpmath=sse -fasynchronous-unwind-tables -fno-omit-frame-pointer -fstack-clash-protection
 optflags: athlon %{__global_cflags} -m32 -march=athlon -fasynchronous-unwind-tables
 optflags: ia64 %{__global_cflags}
-optflags: x86_64 %{__global_cflags} -m64 -mtune=generic
+optflags: x86_64 %{__global_cflags} -m64 -mtune=generic -fstack-clash-protection
 
 optflags: alpha %{__global_cflags} -mieee
 optflags: alphaev5 %{__global_cflags} -mieee -mcpu=ev5

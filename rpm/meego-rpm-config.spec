@@ -3,7 +3,7 @@ Name:       meego-rpm-config
 %define disable_docs_package 1
 
 Summary:    Mer specific rpm configuration files (from MeeGo)
-Version:    0.18-2
+Version:    0.18-3
 Release:    1
 Group:      Development/System
 License:    GPL+
