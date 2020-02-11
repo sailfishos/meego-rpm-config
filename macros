@@ -277,7 +277,7 @@ posix.setenv("RPMBUILD_SOURCEDIR",rpm.expand("%?_sourcedir"));
 %__find_provides        /usr/lib/rpm/meego/find-provides
 %__find_requires        /usr/lib/rpm/meego/find-requires
 
-%__global_cflags	-O2 -g -grecord-gcc-switches -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -Wformat -Wformat-security -Werror=format-security -Werror=implicit-function-declaration -Wl,-z,defs -Wl,-z,now -Wl,-z,relro
+%__global_cflags	-O2 -g -grecord-gcc-switches -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -Wformat -Wformat-security -Werror=format-security -Wl,-z,defs -Wl,-z,now -Wl,-z,relro
 
 # Disable lookups
 %_hkp_keyserver  %{nil}
