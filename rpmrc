@@ -53,7 +53,7 @@ optflags: armv7nhl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-
 optflags: armv7thl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mthumb -Wno-psabi
 optflags: armv7tnhl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mthumb -Wno-psabi
 
-optflags: aarch64 %{__global_cflags} -march=armv8-a
+optflags: aarch64 %{__global_cflags} -march=armv8-a+crc+crypto+sha2 -mtune=cortex-a53
 
 optflags: atarist %{__global_cflags}
 optflags: atariste %{__global_cflags}
