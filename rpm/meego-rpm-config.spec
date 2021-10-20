@@ -6,7 +6,7 @@ Summary:    Mer specific rpm configuration files (from MeeGo)
 Version:    0.18-2
 Release:    1
 Group:      Development/System
-License:    GPL+
+License:    GPLv2+ and GPLv3+
 BuildArch:  noarch
 URL:        http://git.merproject.org/mer-core/meego-rpm-config
 Source0:    meego-rpm-config-%{version}.tar.bz2
