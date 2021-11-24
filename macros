@@ -26,11 +26,11 @@
 %_source_filedigest_algorithm 8
 %_binary_filedigest_algorithm 8
 
-# Use XZ compression for source payloads
-%_source_payload w6T.xzdio
+# Use zstd level 19 compression for source payloads
+%_source_payload w19.zstdio
 
-# Use XZ compression for binary payloads
-%_binary_payload w6T.xzdio
+# Use zstd level 19 compression for binary payloads
+%_binary_payload w19.zstdio
 
 
 #==============================================================================
