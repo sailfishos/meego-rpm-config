@@ -124,6 +124,7 @@
     /usr/lib/rpm/brp-python-hardlink \
     %{!?disable_docs_package:/usr/lib/rpm/meego/find-docs.sh %{buildroot}} \
     %{!?__jar_repack:/usr/lib/rpm/meego/brp-java-repack-jars} \
+    %{?__brp_remove_la_files} \
 %{nil}
 
 #    /usr/lib/rpm/meego/brp-implant-ident-static
