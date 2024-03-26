@@ -77,16 +77,7 @@
 	mandir=%{?buildroot:%{buildroot}}%{_mandir} \\\
 	infodir=%{?buildroot:%{buildroot}}%{_infodir} \\\
   install
-
-%make_install \
-  %{__make} \\\
-	DESTDIR=%{?buildroot:%{buildroot}} \\\
-	INSTALL_ROOT=%{?buildroot:%{buildroot}} \\\
-  install \
-  rm -f %{?buildroot:%{buildroot}}%{_infodir}/dir \
-  find %{?buildroot:%{buildroot}} -regex ".*\\.la$" | xargs rm -f -- \
-  %{!?keepstatic:find %{?buildroot:%{buildroot}} -regex ".*\\.a$" | xargs rm -f --}  
-
+  
 %_smp_mflags %([ -z "$RPM_BUILD_NCPUS" ] \\\
 	&& RPM_BUILD_NCPUS="`/usr/bin/getconf _NPROCESSORS_ONLN`"; \\\
 	[ "$RPM_BUILD_NCPUS" -gt 1 ] && echo "-j$RPM_BUILD_NCPUS")
@@ -133,6 +124,7 @@
     /usr/lib/rpm/brp-python-hardlink \
     %{!?disable_docs_package:/usr/lib/rpm/meego/find-docs.sh %{buildroot}} \
     %{!?__jar_repack:/usr/lib/rpm/meego/brp-java-repack-jars} \
+    %{?__brp_remove_la_files} \
 %{nil}
 
 #    /usr/lib/rpm/meego/brp-implant-ident-static
