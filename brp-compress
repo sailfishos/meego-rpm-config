@@ -22,8 +22,9 @@ if [ -z "$MANDIRS" ]; then
 fi
 
 for f in `find $MANDIRS -type f`; do
-        [ -f "$f" ] || continue
-	[ "`basename $f`" = "dir" ] && continue
+	if [ ! -f "$f" ] || [ "`basename $f`" = "dir" ]; then
+		continue
+	fi
 
 	case "$f" in
 	 *.Z) gunzip -f $f; b=`echo $f | sed -e 's/\.Z$//'`;;
