@@ -351,36 +351,6 @@ posix.setenv("RPMBUILD_SOURCEDIR",rpm.expand("%?_sourcedir"));
 
 
 #==============================================================================
-# ---- default icons directories as per the icon theme freedesktop spec
-
-%_iconstheme    hicolor
-%_iconsbasedir  %{_datadir}/icons/%{_iconstheme}
-
-#
-# The following is a bit heavy and will be removed
-#
-%_icons16dir    %{_iconsbasedir}/16x16/apps
-%_icons22dir    %{_iconsbasedir}/22x22/apps
-%_icons48dir    %{_iconsbasedir}/48x48/apps
-%_icons64dir    %{_iconsbasedir}/64x64/apps
-%_icons96dir    %{_iconsbasedir}/96x96/apps
-%_icons192dir   %{_iconsbasedir}/192x192/apps
-%_iconsscaldir  %{_iconsbasedir}/scalable/apps
-
-
-#
-# MeeGo icons
-#
-# %1	the name of the icon (typically the name of the package). RedHat
-#	requires 3 icons sizes (48, 32, 16), all should be present.
-%meego_icons() \
-install -D -m 644 %1-48.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps/%{name}.png\
-install -D -m 644 %1-32.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/32x32/apps/%{name}.png\
-install -D -m 644 %1-16.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/16x16/apps/%{name}.png\
-%{nil}
-
-
-#==============================================================================
 # ---- default .desktop directories per the desktop-entry freedesktop.org spec
 
 %_desktopdir    %{_datadir}/applications
