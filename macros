@@ -11,33 +11,6 @@
 %_binary_payload w19.zstdio
 
 
-#==============================================================================
-# ---- configure and makeinstall.
-#
-
-%reconfigure \
-  autoreconf -v --install --force || exit 1 \
-  %{configure}
-
-%autogen \
-  %{set_build_flags}; \
-  ./autogen.sh --build=%{_build} --host=%{_host} \\\
-	--target=%{_target_platform} \\\
-	--program-prefix=%{?_program_prefix} \\\
-	--prefix=%{_prefix} \\\
-	--exec-prefix=%{_exec_prefix} \\\
-	--bindir=%{_bindir} \\\
-	--sbindir=%{_sbindir} \\\
-	--sysconfdir=%{_sysconfdir} \\\
-	--datadir=%{_datadir} \\\
-	--includedir=%{_includedir} \\\
-	--libdir=%{_libdir} \\\
-	--libexecdir=%{_libexecdir} \\\
-	--localstatedir=%{_localstatedir} \\\
-	--sharedstatedir=%{_sharedstatedir} \\\
-	--mandir=%{_mandir} \\\
-	--infodir=%{_infodir}
-
 
 %install_info(:-:) \
         lastarg() { shift $(($# - 1)) ; echo "$1" ; } \

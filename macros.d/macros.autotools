@@ -1,0 +1,36 @@
+# -*- rpm-spec -*-
+# Macros specific to building autotools based projects
+# from sources which have not been bootstrapped
+
+%_autogen ./autogen.sh
+
+# Invoke autoreconf to bootstrap sources and configure
+# Can used instead of %configure
+# Works also on project which are already bootstraped
+# in case part the autotools source files have changed.
+# Read: (info "(autoconf) autoreconf Invocation") or:
+# https://www.gnu.org/software/autoconf/manual/html_node/autoreconf-Invocation.html
+%reconfigure \
+  autoreconf -v --install --force || exit 1 \
+  %{configure}
+
+# Call the upstream's autogen.sh script
+# See above for more information
+%autogen \
+  %{set_build_flags}; \
+  %{_autogen} --build=%{_build} --host=%{_host} \\\
+	--target=%{_target_platform} \\\
+	--program-prefix=%{?_program_prefix} \\\
+	--prefix=%{_prefix} \\\
+	--exec-prefix=%{_exec_prefix} \\\
+	--bindir=%{_bindir} \\\
+	--sbindir=%{_sbindir} \\\
+	--sysconfdir=%{_sysconfdir} \\\
+	--datadir=%{_datadir} \\\
+	--includedir=%{_includedir} \\\
+	--libdir=%{_libdir} \\\
+	--libexecdir=%{_libexecdir} \\\
+	--localstatedir=%{_localstatedir} \\\
+	--sharedstatedir=%{_sharedstatedir} \\\
+	--mandir=%{_mandir} \\\
+	--infodir=%{_infodir}
