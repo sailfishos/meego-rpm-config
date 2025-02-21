@@ -34,7 +34,7 @@ find "$MANDIRS" -type f | while read -r f; do
 	esac
 
 	$COMPRESS "$b" </dev/null 2>/dev/null || {
-		inode=$(ls -i "$b" | awk '{ print $1 }')
+		inode=$(stat -c "%i" "$b")
 		others=$(find "$MANDIRS" -type f -inum "$inode")
 		if [ -n "$others" ]; then
 			for afile in $others ; do
@@ -51,7 +51,7 @@ find "$MANDIRS" -type f | while read -r f; do
 done
 
 find "$MANDIRS" -type l | while read -r f; do
-	l=$(ls -l "$f" | sed -e 's/.* -> //' -e 's/\.gz$//' -e 's/\.bz2$//' -e 's/\.Z$//')
+	l=$(basename "$(readlink -f "$f")" | sed -e 's/\.gz$//' -e 's/\.bz2$//' -e 's/\.Z$//')
 	rm -f "$f"
 	b=$(echo "$f" | sed -e 's/\.gz$//' -e 's/\.bz2$//' -e 's/\.Z$//')
 	ln -sf "$l$COMPRESS_EXT" "$b$COMPRESS_EXT"
