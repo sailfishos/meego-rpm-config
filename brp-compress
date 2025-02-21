@@ -21,7 +21,7 @@ if [ -z "$MANDIRS" ]; then
 	exit 0
 fi
 
-for f in $(find "$MANDIRS" -type f); do
+find "$MANDIRS" -type f | while read -r f; do
 	if [ ! -f "$f" ] || [ "$(basename "$f")" = "dir" ]; then
 		continue
 	fi
@@ -50,7 +50,7 @@ for f in $(find "$MANDIRS" -type f); do
 	}
 done
 
-for f in $(find "$MANDIRS" -type l); do
+find "$MANDIRS" -type l | while read -r f; do
 	l=$(ls -l "$f" | sed -e 's/.* -> //' -e 's/\.gz$//' -e 's/\.bz2$//' -e 's/\.Z$//')
 	rm -f "$f"
 	b=$(echo "$f" | sed -e 's/\.gz$//' -e 's/\.bz2$//' -e 's/\.Z$//')
