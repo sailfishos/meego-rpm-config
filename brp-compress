@@ -11,10 +11,16 @@ cd $RPM_BUILD_ROOT
 COMPRESS="gzip -9 -n"
 COMPRESS_EXT=.gz
 
-for d in ./usr/man/man* ./usr/man/*/man* ./usr/info \
-	./usr/share/man/man* ./usr/share/man/*/man* ./usr/share/info \
-	./usr/kerberos/man ./usr/X11R6/man/man* ./usr/lib/perl5/man/man* \
-	./usr/share/doc/*/man/man* ./usr/lib/*/man/man*
+MANDIRS=$(echo ./usr/man/man* ./usr/man/*/man* ./usr/info \
+        ./usr/share/man/man* ./usr/share/man/*/man* ./usr/share/info \
+        ./usr/kerberos/man ./usr/X11R6/man/man* ./usr/lib/perl5/man/man* \
+        ./usr/share/doc/*/man/man* ./usr/lib/*/man/man*)
+
+# If there are no files, there's nothing to do.
+FILE=$(find $MANDIRS -type f -print -quit 2>/dev/null)
+[ -z "$FILE" ] && exit 0
+
+for d in $MANDIRS
 do
     [ -d $d ] || continue
     for f in `find $d -type f`
