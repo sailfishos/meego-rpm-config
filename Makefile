@@ -15,7 +15,7 @@ clean:
 
 install:
 	mkdir -p $(DESTDIR)/usr/lib/rpm/meego
-	cp -pr * $(DESTDIR)/usr/lib/rpm/meego/
+	cp -pr $(shell ls | grep -v "installroot") $(DESTDIR)/usr/lib/rpm/meego/
 	rm -f $(DESTDIR)/usr/lib/rpm/meego/Makefile
 	rm -f $(DESTDIR)/usr/lib/rpm/meego/meego-rpm-config.spec
 
