@@ -3,12 +3,13 @@ Name:       meego-rpm-config
 %define disable_docs_package 1
 
 Summary:    Mer specific rpm configuration files (from MeeGo)
-Version:    0.18-2
+Version:    0.19
 Release:    1
 License:    GPLv2+ and GPLv3+
 BuildArch:  noarch
 URL:        https://github.com/sailfishos/meego-rpm-config
 Source0:    meego-rpm-config-%{version}.tar.bz2
+Requires:   python-srpm-macros
 
 %description
 Mer specific rpm configuration files.
